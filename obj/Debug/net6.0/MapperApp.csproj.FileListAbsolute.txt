@@ -30,3 +30,5 @@ C:\Users\Abhishek\Desktop\dotnet\MapperApp\obj\Debug\net6.0\refint\MapperApp.dll
 C:\Users\Abhishek\Desktop\dotnet\MapperApp\obj\Debug\net6.0\MapperApp.pdb
 C:\Users\Abhishek\Desktop\dotnet\MapperApp\obj\Debug\net6.0\MapperApp.genruntimeconfig.cache
 C:\Users\Abhishek\Desktop\dotnet\MapperApp\obj\Debug\net6.0\ref\MapperApp.dll
+C:\Users\Abhishek\Desktop\dotnet\MapperApp\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Abhishek\Desktop\dotnet\MapperApp\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
