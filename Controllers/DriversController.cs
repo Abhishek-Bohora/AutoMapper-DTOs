@@ -1,4 +1,5 @@
 ﻿using MapperApp.Models;
+using MapperApp.Models.DTOs.Incoming;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,12 +20,26 @@ namespace MapperApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateDriver(Driver data)
+        public IActionResult CreateDriver(DriverForCreationDto data) 
+         //Instead of using our Driver model which is the table of our database we use Dto.
+         //in this case DriverCreationDto
+
         {
             if (ModelState.IsValid)
             {
-                drivers.Add(data);
-                return CreatedAtAction("GetDriver", new { data.Id }, data);
+                var _driver = new Driver() {
+                    // we have created a _driver object and manually mapped from the incoming Dto
+                    Id = new Guid(),
+                    DateAdded= DateTime.Now,
+                    DateUpdated= DateTime.Now,
+                    Status = 1,
+                    FirstName = data.FirstName,
+                    LastName = data.LastName,
+                    DriverNumber = data.DriverNumber,
+                    WorldChampionships = data.WorldChampionships
+                };
+                drivers.Add(_driver);
+                return CreatedAtAction("GetDriver", new { _driver.Id }, _driver);
             }
             return new JsonResult("Something went wrong") { StatusCode = 500 };
         }
